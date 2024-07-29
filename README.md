@@ -11,7 +11,7 @@ Also, I learned
 CODE SOURCE NOTE: I worked with a tutor on this assignment.
 
 ## Deployed Website Link
-<!-- https://agrove21.github.io/module-four-challenge/ -->
+https://agrove21.github.io/module-six-challenge/
 
 
 ## Screenshot
