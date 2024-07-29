@@ -41,7 +41,7 @@ function displayCurrentWeather(city, weather) {
   const iconUrl = `https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`;
   const currentHtml = `
         <h2>${city} (${dayjs(weather.dt_txt).format(
-    "DD/MM/YYYY"
+    "MM/DD/YYYY"
   )}) <img src="${iconUrl}" alt="weather icon"></h2>
         <p>Temperature: ${weather.main.temp} °C</p>
         <p>Humidity: ${weather.main.humidity} %</p>
@@ -59,7 +59,7 @@ function displayForecast(forecast) {
             <div class="col-md-2">
                 <div class="card">
                     <div class="card-body">
-                        <h5>${dayjs(day.dt_txt).format("DD/MM/YYYY")}</h5>
+                        <h5>${dayjs(day.dt_txt).format("MM/DD/YYYY")}</h5>
                         <img src="${iconUrl}" alt="weather icon">
                         <p>Temp: ${day.main.temp} °C</p>
                         <p>Wind: ${day.wind.speed} m/s</p>

@@ -9,6 +9,7 @@
 .row-search {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     border-bottom: 10px;
     border-color: blue;
     background-color: aqua;
@@ -17,12 +18,16 @@
 #current-weather {
 display: flex;
 flex-direction: column;
-border: 10px;
+border: 20px;
 border-color: blue;
 }
 
 #forecast .card {
     margin: 0.5rem;
+    padding: 2px;
     display: flex;
+    width: 100px;
+    row-gap: 20px;
+    background-color: aqua;
     
 }
