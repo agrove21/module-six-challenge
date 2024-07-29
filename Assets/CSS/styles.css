@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    background-color: blue;
+    justify-content: right;
+    padding: 10px;
+    color: whitesmoke;
+}
+
+.row-search {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 10px;
+    border-color: blue;
+    background-color: aqua;
+}
+
+#current-weather {
+display: flex;
+flex-direction: column;
+border: 10px;
+border-color: blue;
+}
+
+#forecast .card {
+    margin: 0.5rem;
+    display: flex;
+    
+}
