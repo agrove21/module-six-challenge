@@ -12,8 +12,13 @@ $(document).ready(function () {
   });
 
   $("#history").on("click", "li", function () {
+    $( ".list-group-item" ).each(function( li ) {
+      $(li).removeClass("selected")
+    });
     const city = $(this).text();
+    $(this).addClass('selected')
     getCoordinates(city);
+    $(".5day-forecast-head").removeClass('hide');
   });
 });
 
@@ -29,7 +34,7 @@ function getCoordinates(city) {
 }
 
 function getWeatherData(city, lat, lon) {
-  const url = `${apiBaseUrl}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  const url = `${apiBaseUrl}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
   $.getJSON(url, function (data) {
     displayCurrentWeather(city, data.list[0]);
     displayForecast(data.list);
@@ -43,9 +48,9 @@ function displayCurrentWeather(city, weather) {
         <h2>${city} (${dayjs(weather.dt_txt).format(
     "MM/DD/YYYY"
   )}) <img src="${iconUrl}" alt="weather icon"></h2>
-        <p>Temperature: ${weather.main.temp} °C</p>
+        <p>Temperature: ${weather.main.temp} °F</p>
         <p>Humidity: ${weather.main.humidity} %</p>
-        <p>Wind Speed: ${weather.wind.speed} m/s</p>
+        <p>Wind Speed: ${weather.wind.speed} mph</p>
     `;
   $("#current-weather").html(currentHtml);
 }
@@ -61,8 +66,8 @@ function displayForecast(forecast) {
                     <div class="card-body">
                         <h5>${dayjs(day.dt_txt).format("MM/DD/YYYY")}</h5>
                         <img src="${iconUrl}" alt="weather icon">
-                        <p>Temp: ${day.main.temp} °C</p>
-                        <p>Wind: ${day.wind.speed} m/s</p>
+                        <p>Temp: ${day.main.temp} °F</p>
+                        <p>Wind: ${day.wind.speed} mph</p>
                         <p>Humidity: ${day.main.humidity} %</p>
                     </div>
                 </div>
