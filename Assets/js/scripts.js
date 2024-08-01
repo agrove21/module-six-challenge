@@ -12,13 +12,13 @@ $(document).ready(function () {
   });
 
   $("#history").on("click", "li", function () {
-    $( ".list-group-item" ).each(function( li ) {
-      $(li).removeClass("selected")
-    });
+    $("#history .list-group-item").removeClass("selected");
+    $(this).addClass('selected');
+
     const city = $(this).text();
-    $(this).addClass('selected')
+    $(this).addClass("selected");
     getCoordinates(city);
-    $(".5day-forecast-head").removeClass('hide');
+    $(".5day-forecast-head").removeClass("hide");
   });
 });
 

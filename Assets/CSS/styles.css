@@ -29,12 +29,14 @@ padding: 10px; */
 }
 #forecast{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
+
 .hide{
     display: none;
 }
+
 .selected { 
-    background: #F39814; 
+    background-color: #007bff; 
     color: white; 
 }
