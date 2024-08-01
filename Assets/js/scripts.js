@@ -9,6 +9,7 @@ $(document).ready(function () {
     if (city) {
       getCoordinates(city);
     }
+    $("#city-input").val("");
   });
 
   $("#history").on("click", "li", function () {
@@ -18,7 +19,6 @@ $(document).ready(function () {
     const city = $(this).text();
     $(this).addClass("selected");
     getCoordinates(city);
-    $(".5day-forecast-head").removeClass("hide");
   });
 });
 
@@ -53,15 +53,17 @@ function displayCurrentWeather(city, weather) {
         <p>Wind Speed: ${weather.wind.speed} mph</p>
     `;
   $("#current-weather").html(currentHtml);
+  $("#current-weather").removeClass("hide");
 }
 
 function displayForecast(forecast) {
+  $(".5day-forecast-head").removeClass("hide");
   $("#forecast").empty();
   for (let i = 0; i < forecast.length; i += 8) {
     const day = forecast[i];
     const iconUrl = `https://openweathermap.org/img/wn/${day.weather[0].icon}.png`;
     const forecastHtml = `
-            <div class="col-md-2">
+            <div class="item">
                 <div class="card">
                     <div class="card-body">
                         <h5>${dayjs(day.dt_txt).format("MM/DD/YYYY")}</h5>
