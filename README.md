@@ -16,4 +16,4 @@ https://agrove21.github.io/module-six-challenge/
 
 
 ## Screenshot
-<img src="assets/images/weather dashboard.png" width="800px">
+<img src="assets/images/weather dashboard1.png" width="800px">
