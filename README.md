@@ -16,4 +16,5 @@ https://agrove21.github.io/module-six-challenge/
 
 
 ## Screenshot
-<img src="assets/images/Screenshot 2024-08-04 111001.png" width="800px">
+what's up?
+<!-- <img src="assets/images/Screenshot 2024-08-04 111001.png" width="800px"> -->
